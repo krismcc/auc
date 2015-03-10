@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Kris/Documents/auction/app/controllers/auctionController.php</file>
+            <file>file:/C:/Users/Kris/Documents/auction/app/controllers/LoginController.php</file>
+            <file>file:/C:/Users/Kris/Documents/auction/app/views/layouts/partials/navbar.blade.php</file>
+            <file>file:/C:/Users/Kris/Documents/auction/app/routes.php</file>
+            <file>file:/C:/Users/Kris/Documents/auction/app/views/sessions/create.blade.php</file>
+            <file>file:/C:/Users/Kris/Documents/auction/app/views/auctions/index.blade.php</file>
+            <file>file:/C:/Users/Kris/Documents/auction/app/views/pages/index.blade.php</file>
+            <file>file:/C:/Users/Kris/Documents/auction/app/controllers/BaseController.php</file>
+            <file>file:/C:/Users/Kris/Documents/auction/app/views/login/create.blade.php</file>
+        </group>
+    </open-files>
+</project-private>
