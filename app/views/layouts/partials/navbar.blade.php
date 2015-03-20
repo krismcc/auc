@@ -17,6 +17,9 @@
                 <input class="form-control" type="text" placeholder="Search..." ></input>
             </form> -->
           </ul>
+            {{ Form::open(['method' => 'GET', 'action' => 'items'])  }}
+            {{ Form::input('search', 'q', null, ['placeholder' => 'Search Items ......'])}}
+            {{ Form::close() }}
             <div class='navbar-form pull-right'>
                                     <fieldset>
                                         @if (Auth::guest())

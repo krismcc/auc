@@ -51,7 +51,7 @@ class AuctionManagerController extends \BaseController {
 	 */
 	public function store()
 	{
-//get data to be updated
+            //get data to be updated
             //user_id will be null because it is not an input field
             $input = Input::only('user_id', 'startdate', 'title', 'location', 'description', 'contact_phone');
             //assign data to new variable
@@ -61,7 +61,8 @@ class AuctionManagerController extends \BaseController {
             //create a new entry in auction table using the auction model and the created data
             $auction = Auction::create($updated_input);
             
-            
+            return Redirect::route('manageAuctions.index');
+
             //return Redirect::auctions();
         }
 	/**

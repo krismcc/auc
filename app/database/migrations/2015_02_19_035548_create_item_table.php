@@ -19,6 +19,7 @@ class CreateItemTable extends Migration {
                         $table->string('title');
 			$table->string('description');
 			$table->decimal('reserve', 8 , 2);
+                        $table->string('auction_status');
 			//$table->integer('auction_id')->unsigned();
 			$table->timestamps();  
                         $table->foreign('user_id')->references('id')->on('users');

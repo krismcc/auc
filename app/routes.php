@@ -35,8 +35,16 @@ Route::get('/auctions/{id}', 'auctionController@show');
 #items
 Route::get('/items', ['as' => 'items', 'uses' => 'itemController@index']);
 Route::get('/items/{id}', 'itemController@show');
-Route::post('/items/{id}', 'itemController@show');
+Route::post('/items/{id}',['as' => 'items.store', 'uses' => 'itemController@store']);
+//Route::post('/items/{id}', array('uses' => 'itemController@postBid'));
 
+
+
+//Route::get('item/{id}', function()
+//{
+//return ;
+    
+//});
 
 
 

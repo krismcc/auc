@@ -7,7 +7,19 @@
 
 @foreach($items as $item)
 <li>
-    {{link_to("/items/{$item->id}", $item->title) }} 
+    <div class="panel panel-default" style="width:500px" style="position: absolute">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{$item->title}}</h3>
+  </div>
+  <div class="panel-body">
+    {{$item->description}}
+    <br>
+    {{"Reserve:",$item->reserve}}
+  </div>
+            {{link_to("/items/{$item->id}", 'view') }}
+
+</a>
+</div>
 </li>
 @endforeach
 

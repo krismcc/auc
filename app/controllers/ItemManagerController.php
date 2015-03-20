@@ -6,7 +6,7 @@ class ItemManagerController extends \BaseController {
     
       private $createItemForm;
         /**
-        * @param createAuctionForm $createAuctionForm
+        * @param createItemForm $createItemForm
         */
         function __construct(createItemForm $createItemForm)
         {
@@ -70,6 +70,8 @@ class ItemManagerController extends \BaseController {
             $selected_auction = Auction::find($auction_id);
            // $lastinsert = DB::getPdo()->lastInsertId();
            $selected_auction->items()->attach($item->id);
+          return Redirect::route('manageItems.index');
+
          //  var_dump($selected_auction);
           // var_dump($auction_id);
             //var_dump($item->id);

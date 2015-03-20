@@ -12,23 +12,23 @@
 
     <!-- Bootstrap core CSS -->
     <!-- custom style sheet also included @ style.css -->
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css"
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
 
     <!-- Custom styles for this template -->
-    <link href="starter-template.css" rel="stylesheet">
+    <!-- <link href="starter-template.css" rel="stylesheet"> -->
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-    <script type='text/javascript' src='../../public/js/script.js'></script> 
-    <script> src="../../../public/js/Main.js"</script> 
-     <script>
+    <!-- <script src="../../assets/js/ie-emulation-modes-warning.js"></script> -->
+    <!-- <script type='text/javascript' src='../../public/js/script.js'></script> --> 
+    
+     <!-- <script>
 $(function() {
 $( "#startdate" ).datepicker();
 });
-</script>
-
+</script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   </head>
 
     <body style="padding-top: 50px;">
@@ -42,8 +42,8 @@ $( "#startdate" ).datepicker();
     </div>
 
     <!-- Placed at the end of the document so the pages load faster. ideally should placed in footer -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    
+    <!-- <script src="../../dist/js/bootstrap.min.js"></script> -->
+    <!-- <script src="/js/Main.js"></script> --> 
    
-
-</html>
+@include('layouts/partials/footer');

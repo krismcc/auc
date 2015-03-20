@@ -45,13 +45,14 @@ class AuctionController extends BaseController {
 	 */
 	public function show($id)
 	{
-            // $auctionid = Auction::whereid($id)->first();
+             $auctionid = Auction::whereid($id)->first();
             
              //$item = Auction::find($id)->items;
-            $item = Auction::with('items')->get()->find(1)->items->all();
+           // $item = Auction::with('items')->get()->find(1)->items->all();
+            $item = Auction::with('items')->get()->find($auctionid)->items->all();
+
              //var_dump($item);
              
-            // return View::make('auctions.show', ['auction' => $auction]);
              
                return View::make('auctions.show', ['item' => $item]);
 

@@ -2,7 +2,7 @@
 
 @section('content')
 
-@foreach($items as $item)
+@foreach($item as $item)
     {{link_to("/items/{$item->id}", $item->title) }}
 
 <h1>{{$item->title}}</h1>

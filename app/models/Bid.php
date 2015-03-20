@@ -3,7 +3,7 @@
 class Bid extends \Eloquent {
         protected $table = 'bid';
 
-	protected $fillable = ['user_id','bid_amount','permission'];
+	protected $fillable = ['item_id','user_id','bid_amount','permission'];
         
         // a bid must be specifric to an item 
            //public function on(){

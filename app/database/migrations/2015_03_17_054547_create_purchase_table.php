@@ -3,8 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateBidTable extends Migration {
-                                
+class CreatePurchaseTable extends Migration {
+
 	/**
 	 * Run the migrations.
 	 *
@@ -12,20 +12,16 @@ class CreateBidTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('bid', function(Blueprint $table)
+		Schema::create('purchase', function(Blueprint $table)
 		{
-			$table->increments('id')->unsigned();
-			$table->integer('item_id')->unsigned();
+			$table->increments('id');
+                        $table->integer('item_id')->unsigned();
 			$table->integer('user_id')->unsigned();
-			$table->float('bid_amount');
-			$table->string('permission');
+                        $table->float('sale_price');
                         $table->integer('paddle_number')->nullable();
 			$table->timestamps();
-                                             
                         $table->foreign('item_id')->references('id')->on('item');
                         $table->foreign('user_id')->references('id')->on('users');
-
-
 		});
 	}
 
@@ -37,7 +33,7 @@ class CreateBidTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('bid');
+		Schema::drop('purchase');
 	}
 
 }
