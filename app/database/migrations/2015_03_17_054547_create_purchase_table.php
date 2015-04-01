@@ -16,12 +16,11 @@ class CreatePurchaseTable extends Migration {
 		{
 			$table->increments('id');
                         $table->integer('item_id')->unsigned();
-			$table->integer('user_id')->unsigned();
+			$table->integer('buyer_id')->unsigned();
                         $table->float('sale_price');
-                        $table->integer('paddle_number')->nullable();
 			$table->timestamps();
                         $table->foreign('item_id')->references('id')->on('item');
-                        $table->foreign('user_id')->references('id')->on('users');
+                        $table->foreign('buyer_id')->references('id')->on('users');
 		});
 	}
 

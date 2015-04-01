@@ -1,7 +1,7 @@
 <?php
 
 class PagesController extends BaseController {
-
+        
 	/**
 	 * Display a listing of the resource.
 	 * GET /pages
@@ -10,7 +10,9 @@ class PagesController extends BaseController {
 	 */
 	public function index()
 	{
-		return View::make('pages.index');
+            $recentItems = Item::orderBy('created_at', 'desc')->take(3)->get();
+            //var_dump($recentItems);
+            return View::make('pages.index', ['recentItems' => $recentItems]);
 	}
 
 	/**
@@ -21,7 +23,7 @@ class PagesController extends BaseController {
 	 */
 	public function create()
 	{
-		return View::make('pages.create');
+            return View::make('pages.create');
 
 	}
 

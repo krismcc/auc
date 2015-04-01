@@ -15,15 +15,17 @@ class CreateAuctionTable extends Migration {
 		Schema::create('auction', function(Blueprint $table)
 		{
 			$table->increments('id')->unsigned();
-			$table->integer('user_id')->unsigned();
+			$table->integer('auctioneer_id')->unsigned();
 			$table->dateTime('startdate');
                         $table->string('title');
+                        $table->string('auction_house_name');
 			$table->string('location');
                         $table->string('description');
 			$table->integer('contact_phone');
+                        $table->string('contact_email');
 			$table->timestamps();
                         
-                        $table->foreign('user_id')->references('id')->on('users');
+                        $table->foreign('auctioneer_id')->references('id')->on('users');
 		});
 	}
 

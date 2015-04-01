@@ -11,25 +11,11 @@
     <title>@yield('meta-title', 'Auction')</title>
 
     <!-- Bootstrap core CSS -->
-    <!-- custom style sheet also included @ style.css -->
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-
-    <!-- Custom styles for this template -->
-    <!-- <link href="starter-template.css" rel="stylesheet"> -->
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <!-- <script src="../../assets/js/ie-emulation-modes-warning.js"></script> -->
-    <!-- <script type='text/javascript' src='../../public/js/script.js'></script> --> 
-    
-     <!-- <script>
-$(function() {
-$( "#startdate" ).datepicker();
-});
-</script> -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  </head>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <!-- jquery link-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    </head>
 
     <body style="padding-top: 50px;">
 

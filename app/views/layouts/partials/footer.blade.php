@@ -1,7 +1,9 @@
-<footer>
-    <h1> im a footer </h1>
-</footer>
+    <footer>    
+        
+        <h1>  </h1>
+        
+    </footer>
 
-</body>
+    </body>
 
-</html>
+    </html>

@@ -35,13 +35,16 @@
         * @return Response
         */
         public function store()
-        {
+        {   //get the input submitted by user
             $input = Input::only('username', 'email', 'password', 'password_confirmation');
             
+            //validate this info
             $this->registrationForm->validate($input);
             
+            //create the user record
             $user = User::create($input);
             
+            //log in the user
             Auth::login($user);
             
             return Redirect::home();

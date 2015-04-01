@@ -41,6 +41,7 @@ class SessionsController extends BaseController {
 	 */
 	public function store()
 	{
+            
             $this->loginForm->validate($input = Input::only('email', 'password'));
             
             if(Auth::attempt($input))

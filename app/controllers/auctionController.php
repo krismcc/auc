@@ -9,10 +9,11 @@ class AuctionController extends BaseController {
 	 * @return Response
 	 */
 	public function index()
-	{
-            $auctions = Auction::all();
+	{   $allAuctions = Auction::paginate(1);
+            return View::make('auctions.index', ['allAuctions' => Auction::paginate(1)]);
+            //$auctions = Auction::all();
 
-            return View::make('auctions.index', ['auctions' => $auctions]);
+            //return View::make('auctions.index', ['auctions' => $auctions]);
 	}
 
 	/**
@@ -45,16 +46,15 @@ class AuctionController extends BaseController {
 	 */
 	public function show($id)
 	{
-             $auctionid = Auction::whereid($id)->first();
+            //find the auction from the $id passed
+            $auctionid = Auction::whereid($id)->first();
             
-             //$item = Auction::find($id)->items;
-           // $item = Auction::with('items')->get()->find(1)->items->all();
-            $item = Auction::with('items')->get()->find($auctionid)->items->all();
+            //find all the items linked to that auction
+            //$item = Auction::with('items')->get()->find($auctionid)->items->all();
+            $items = Auction::with('items')->get()->find($auctionid)->items()->paginate(1);
 
-             //var_dump($item);
-             
-             
-               return View::make('auctions.show', ['item' => $item]);
+            //return View::make('auctions.show', ['item' => $item]);
+            return View::make('auctions.show', compact('items', 'auctionid'));
 
 
 	}

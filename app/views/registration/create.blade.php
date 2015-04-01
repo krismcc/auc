@@ -1,9 +1,14 @@
 @extends('layouts/layout')
+
 @section('content')
-      <div class="starter-template">
+
+    <div class="starter-template">
+        
         <h1>  register create</h1>
+        
         <!-- by posting to route ensures a restful service -->
         {{Form::open(['route' => 'registration.store']) }}
+        
         <!-- username -->
         <div class="form-group">
             {{Form::label('username', 'Username:') }}
@@ -16,15 +21,13 @@
             {{Form::label('emai', 'Email:') }}
             {{Form::text('email', null, ['class' => 'form-control', 'required' => 'required']) }}
             {{$errors->first('email', '<span class="error">:message </span>')}}
-
         </div>
         
         <!-- password -->
         <div class="form-group">
             {{Form::label('password', 'Password:') }}
             {{Form::text('password', null, ['class' => 'form-control', 'required' => 'required']) }}
-                        {{$errors->first('password', '<span class="error">:message </span>')}}
-
+            {{$errors->first('password', '<span class="error">:message </span>')}}
         </div>
         
         <!-- password_confirmation` -->
@@ -35,9 +38,13 @@
         
          <!-- submit`` -->
         <div class="form-group">
+            
             {{Form::submit('Create Account', ['class' => 'btn btn-primary']) }}
+            
         </div>
+         
         {{Form::close() }}
-      </div>
+        
+    </div>
 @stop
 

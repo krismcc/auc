@@ -17,11 +17,11 @@ use Laracasts\Validation\FormValidator;
 
 class createItemForm extends FormValidator {
     protected $rules = [
-       // 'title' => 'required',
-      //  'location'=> 'required',
-       // 'description'=> 'required',
-       // 'contact_phone'=> 'required',
-       // 'startdate'=> 'required'
+        'title' => 'required',
+        'location'=> 'required',
+        'description'=> 'required',
+        'contact_phone'=> 'required',
+        'startdate'=> 'required'
 
         
     ];

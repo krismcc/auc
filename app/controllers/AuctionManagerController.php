@@ -27,6 +27,9 @@ class AuctionManagerController extends \BaseController {
             return View::make('auctionManager.index', ['auctions' => $auctions]);
 
             }
+            else{
+               return Redirect::home();
+            }
             
             //return View::make('auctionManager.index');
 	}
@@ -53,14 +56,12 @@ class AuctionManagerController extends \BaseController {
 	{
             //get data to be updated
             //user_id will be null because it is not an input field
-            $input = Input::only('user_id', 'startdate', 'title', 'location', 'description', 'contact_phone');
             //assign data to new variable
             $updated_input = Input::all();
-            //assign user_id in the array to the id of he authenticated (and previously validated) data
-            $updated_input['user_id'] = Auth::User()->id;
+            //assign user_id(id of auctioneer) in the array to the id of he authenticated (and previously validated) data
+            $updated_input['auctioneer_id'] = Auth::User()->id;
             //create a new entry in auction table using the auction model and the created data
             $auction = Auction::create($updated_input);
-            
             return Redirect::route('manageAuctions.index');
 
             //return Redirect::auctions();

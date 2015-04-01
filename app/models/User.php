@@ -8,47 +8,38 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	use UserTrait, RemindableTrait;
-
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
+        
 	protected $table = 'users';
-        
-        /**
-	 * fillable fields
-	 *
-	 * @var array
-	 */
-        
+
         // to protect agINst mass assignment when registering
-        protected $fillable = [
-            'username', 'email', 'password' 
-        ];
-        /**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
+        protected $fillable = [ 'username', 'email', 'password' ];
+
 	protected $hidden = array('password', 'remember_token');
-        
-        
+
         //hash password
         public function setPasswordAttribute($password){ 
+            
             $this->attributes['password'] = Hash::make($password);
             
         }
+        
         //A user has many items
-        public function items (){
-            return $this->hasMany('Item');
+        public function itemsForSale (){
+            return $this->hasMany('Item', 'seller_id');
+        }
+        
+        public function itemsToSell (){
+            
+            return $this->hasMany('Item', 'auctioneer_id');
         }
         
         public function auctions(){
-            return $this->hasMany('Auction');
+            
+            return $this->hasMany('Auction', 'auctioneer_id');
         }
         
         public function purchases(){
+            
             return $this->hasMany('Purchase');
         }
 
